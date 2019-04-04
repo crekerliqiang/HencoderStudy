@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">HenCoder 绘制 3</string>
+    <string name="app_name">绘制 3</string>
     <string name="title_draw_text">drawText()</string>
     <string name="title_static_layout">StaticLayout</string>
     <string name="title_set_text_size">setTextSize()</string>
