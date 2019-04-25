@@ -49,11 +49,12 @@ public class Practice04PropertyValuesHolderLayout extends RelativeLayout {
                 ObjectAnimator animator = ObjectAnimator.ofPropertyValuesHolder(view, holder1, holder2, holder3);
                 animator.start();
 
-                //todo 用下面这种方式为什么第二次会只有 alpha有效
+                //todo 用下面这种方式为什么第二次会只有 alpha 有效
 //                view.animate()
-//                        .scaleX(0.01f)
-//                        .scaleY(0.01f)
-//                        .alpha(0.01f)
+//                        .scaleX(0f)
+//                        .scaleY(0f)
+//                        .alpha(0f)
+//                        .setDuration(1000)
 //                .setListener(new Animator.AnimatorListener() {
 //                    @Override
 //                    public void onAnimationStart(Animator animation) {
@@ -63,7 +64,8 @@ public class Practice04PropertyValuesHolderLayout extends RelativeLayout {
 //                        view.animate()
 //                                .scaleX(1f)
 //                                .scaleY(1f)
-//                                .alpha(1f);
+//                                .alpha(1f)
+//                        .setDuration(1000);
 //                    }
 //                    @Override
 //                    public void onAnimationCancel(Animator animation) {
