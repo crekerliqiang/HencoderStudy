@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<demo.com.taglayout.view.TagLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <demo.com.taglayout.view.ColorTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:isUnderline="false"
+        android:text="阿尔伯特·爱因斯坦"/>
+    <demo.com.taglayout.view.ColorTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="玛丽·居里"/>
+    <demo.com.taglayout.view.ColorTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="马克斯·普朗克"/>
+    <demo.com.taglayout.view.ColorTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="奥古斯特·皮卡尔德"/>
+    <demo.com.taglayout.view.ColorTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="亨里奥特"/>
+    <demo.com.taglayout.view.ColorTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="保罗·埃伦费斯特"/>
+
+    <demo.com.taglayout.view.ColorTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="亨德里克·洛伦兹"/>
+    <demo.com.taglayout.view.ColorTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="保罗·朗之万"/>
+    <demo.com.taglayout.view.ColorTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="路易·德布罗意"/>
+    <demo.com.taglayout.view.ColorTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="维尔纳·海森堡"/>
+    <demo.com.taglayout.view.ColorTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="沃尔夫冈·泡利"/>
+
+
+</demo.com.taglayout.view.TagLayout>
