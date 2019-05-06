@@ -4,8 +4,9 @@ import android.view.InputDevice;
 import android.view.MotionEvent;
 import android.view.ViewConfiguration;
 
+import org.junit.Ignore;
+/**
 import static android.hardware.radio.V1_0.PinState.DISABLED;
-
 public class ViewDoc {
     public boolean onTouchEvent(MotionEvent event) {
         //获取基本信息 点击的坐标值(x.y)
@@ -222,3 +223,4 @@ public class ViewDoc {
     }
 
 }
+*/

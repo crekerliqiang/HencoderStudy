@@ -4,6 +4,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.MotionEvent;
 
+import demo.com.library.LLog;
+
 public class MainActivity extends AppCompatActivity {
 
     @Override
@@ -14,11 +16,19 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public boolean dispatchTouchEvent(MotionEvent ev) {
-        return super.dispatchTouchEvent(ev);
+        int e = ev.getActionMasked();
+        boolean b = super.dispatchTouchEvent(ev);
+        LLog.d(LLog.C_TAG,"activity dispatchTouchEvent " + e + " return " + b);
+        return b;
     }
+
 
     @Override
     public boolean onTouchEvent(MotionEvent event) {
-        return super.onTouchEvent(event);
+        int e = event.getActionMasked();
+        boolean b = super.onTouchEvent(event);
+        LLog.d(LLog.C_TAG,"activity onTouchEvent " + e + " return " + b);
+        return b;
     }
+
 }

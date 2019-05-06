@@ -8,6 +8,7 @@ import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.View;
 
+import demo.com.library.LLog;
 import demo.com.library.Util;
 
 public class MyView extends View {
@@ -26,8 +27,18 @@ public class MyView extends View {
     }
 
     @Override
-    public boolean dispatchTouchEvent(MotionEvent event) {
-        return super.dispatchTouchEvent(event);
+    public boolean dispatchTouchEvent(MotionEvent ev) {
+        boolean b = super.dispatchTouchEvent(ev);
+        LLog.d(LLog.C_TAG,"view dispatchTouchEvent " + ev.getActionMasked() + " return " + b);
+        return b;
     }
+
+    @Override
+    public boolean onTouchEvent(MotionEvent event) {
+        boolean b = super.onTouchEvent(event);
+        LLog.d(LLog.C_TAG,"view onTouchEvent " + event.getActionMasked() + " return " + b);
+        return b;
+    }
+
 
 }

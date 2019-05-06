@@ -1,10 +1,13 @@
 package demo.com.touch.view;
 
 import android.content.Context;
+import android.graphics.Canvas;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
+
+import demo.com.library.LLog;
 
 public class MyViewGroup extends ViewGroup {
 
@@ -22,12 +25,29 @@ public class MyViewGroup extends ViewGroup {
     }
 
     @Override
+    protected void onDraw(Canvas canvas) {
+        super.onDraw(canvas);
+    }
+
+    @Override
     public boolean dispatchTouchEvent(MotionEvent ev) {
-        return super.dispatchTouchEvent(ev);
+        boolean b = super.dispatchTouchEvent(ev);
+        LLog.d(LLog.C_TAG,"group dispatchTouchEvent " + ev.getActionMasked() + " return " + b);
+        return b;
     }
 
     @Override
     public boolean onTouchEvent(MotionEvent event) {
-        return super.onTouchEvent(event);
+        boolean b = super.onTouchEvent(event);
+        LLog.d(LLog.C_TAG,"group onTouchEvent " + event.getActionMasked() + " return " + b);
+
+        return b;
+    }
+
+    @Override
+    public boolean onInterceptTouchEvent(MotionEvent ev) {
+        boolean b = super.onInterceptTouchEvent(ev);
+        LLog.d(LLog.C_TAG,"group onInterceptTouchEvent " + ev.getActionMasked() + " return " + b);
+        return b;
     }
 }
