@@ -1,1 +1,1 @@
-include ':app', ':taglayout', ':library', ':touch15', ':16scalable'
+include ':app', ':taglayout', ':library', ':touch15', ':16scalable', ':17multitouch'

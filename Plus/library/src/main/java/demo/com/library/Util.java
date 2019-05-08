@@ -22,6 +22,9 @@ public class Util {
     public static Bitmap getBitmap(){
         return getBitmap(R.drawable.crekerli_doraemon);
     }
+    public static Bitmap getBitmap(float width){
+        return getBitmap(R.drawable.crekerli_doraemon,  (int)width);
+    }
     public static Bitmap getBitmap(int id, int width) {
         BitmapFactory.Options options = new BitmapFactory.Options();
         options.inJustDecodeBounds = true;

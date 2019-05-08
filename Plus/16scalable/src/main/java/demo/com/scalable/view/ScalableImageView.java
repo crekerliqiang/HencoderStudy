@@ -17,7 +17,6 @@ import android.widget.Toast;
 import demo.com.library.LLog;
 import demo.com.library.Util;
 
-//TODO 加入双指缩放以后，变得不是很流畅，需要改进地方
 public class ScalableImageView extends View{
     private static final float OVER_SCALE_RATE = 3f;
     private Bitmap bitmap;
