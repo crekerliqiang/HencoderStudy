@@ -93,7 +93,7 @@ public class ScalableImageView extends View{
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
         reviseXY();
-        float rate =  (scaleMultiple*smallScale)/bigScale;
+        float rate =  (scaleMultiple-smallScale)/(bigScale-smallScale);
         canvas.translate(offsetX * rate,offsetY * rate);//scaleRate 保证缩小以后回到原位
         canvas.scale(scaleMultiple,scaleMultiple,getWidth()/2f,getHeight()/2f);
         canvas.drawBitmap(bitmap,left,top,paint);
@@ -195,6 +195,7 @@ public class ScalableImageView extends View{
         public boolean onScale(ScaleGestureDetector detector) {
             float f = detector.getScaleFactor();
             scaleMultiple = preScaleRate * f;
+            isBig = f > 1f ;
             invalidate();
             return false;
         }
