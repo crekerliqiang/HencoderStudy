@@ -3,7 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:ignore="ExtraText">
 
 
     <!--1. 四个布局参数：-->
@@ -41,7 +42,8 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        />
     <!--居中后向左偏移-->
     <Button
         android:id="@+id/button3"
@@ -76,4 +78,30 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    注意start和end的区别
+
+    上面有讲到两个关键用法，一个是边界约束，一个是边界距离
+    主要的类型为：
+    1. layout_marginXX
+    2. layout_constraintXX_toXXOf="some view or viewGroup id"
+    其中"XX"表示 Bottom，Top、End、Start、Left、Right
+    1. layout_marginXX：表示相对于边缘处，再往相反的方向移动的距离，但是必须设置相关的约束，否则设置的margin参数会不起作用
+    比如你设置了"android:layout_marginBottom="200dp""，
+    但是没有设置"app:layout_constraintBottom_toBottomOf="some id"，那么设置的就不会起作用
+    2. layout_constraintXX_toXXOf
+    前面的XX表示当前View的四个方位（Top,bottom,end,start），后面的XX表示"="后面的id，比如你写parent就表示真个layout的跟布局
+
+
+
+    这里区分一下Start和Left的区别（同理为End和Right的区别）
+
+
+
+    如何理解约束？链子
+
+    看一下这个语句的意思
+
+
+
 </android.support.constraint.ConstraintLayout>
