@@ -1,10 +1,5 @@
 package demo.com.touch.view;
 
-import android.view.InputDevice;
-import android.view.MotionEvent;
-import android.view.ViewConfiguration;
-
-import org.junit.Ignore;
 /**
 import static android.hardware.radio.V1_0.PinState.DISABLED;
 public class ViewDoc {

@@ -1,4 +1,4 @@
-package demo.com.hencoderplus;
+package demo.com.constraintlayout;
 
 import android.os.Bundle;
 import android.support.annotation.LayoutRes;
@@ -14,7 +14,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
-    //    implementation 'com.android.support:design:28.0.0'
     TabLayout tabLayout;
     ViewPager pager;
     List<PageModel> pageModels = new ArrayList<>();
