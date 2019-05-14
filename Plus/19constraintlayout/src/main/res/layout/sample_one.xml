@@ -4,80 +4,70 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
     tools:ignore="ExtraText">
 
-
-    <!--1. 四个布局参数：-->
-
-    <!--app:layout_constraintStart_toStartOf="parent"-->
-    <!--app:layout_constraintEnd_toEndOf="parent"-->
-    <!--app:layout_constraintTop_toTopOf="parent"-->
-    <!--app:layout_constraintBottom_toBottomOf="parent"-->
-
-    <!--其中的parent可以修改为别的view的id-->
-    <!--以上四句的意思很好理解，比如 layout_constraintStart_toStartOf ，翻译过来意思就是，"开始，指向xx的开始" 其中"xx"就表示后面的参数-->
+    基本的上下左右放置
 
 
-    <!--1.居中布局-->
-    <Button
+    1. 四个布局参数：
+
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintBottom_toBottomOf="parent"
+
+    其中的parent可以修改为别的view的id
+    以上四句的意思很好理解，比如 layout_constraintStart_toStartOf ，翻译过来意思就是，"开始，指向xx的开始" 其中"xx"就表示后面的参数
+
+
+    1.居中布局
+    <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="A居中布局"
+        android:background="@color/colorAccent"
+
+        android:text="居中布局"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <!--2.加入边距限制 左上偏移-->
-    <!--layout_marginStart 的意思是在原有的基础上做偏移-->
+    2.加入边距限制 左上偏移
+    layout_marginStart 的意思是在原有的基础上做偏移
 
-    <!--居中后向下偏移  翻译为："距离A的top边缘位置300dp"，更贴切，我觉得-->
-    <Button
-        android:id="@+id/button2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="200dp"
-        android:text="TOP 200dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        />
-    <!--居中后向左偏移-->
-    <Button
+    居中后向左偏移  翻译为："距离A的top边缘位置300dp"，更贴切，我觉得
+    <TextView
         android:id="@+id/button3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+
+
         android:layout_marginEnd="200dp"
-        android:text="END 200dp"
+        android:text="End 200dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <!--居中后向右偏移-->
-    <Button
+    居中后向右偏移
+    <TextView
         android:id="@+id/button4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+
+
         android:layout_marginStart="200dp"
         android:text="Start 200dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-    <!--居中后向上偏移-->
-    <Button
-        android:id="@+id/button5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="200dp"
-        android:text="Bottom 200dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+
+
 
     注意start和end的区别
 
@@ -93,15 +83,30 @@
     前面的XX表示当前View的四个方位（Top,bottom,end,start），后面的XX表示"="后面的id，比如你写parent就表示真个layout的跟布局
 
 
-
     这里区分一下Start和Left的区别（同理为End和Right的区别）
 
 
 
-    如何理解约束？链子
-
-    看一下这个语句的意思
+    如何理解约束？链子 画一个图，包含一个矩形（View的形状）的Start、End、Top、Bottom，理解，约束就是绑定的意思
 
 
+    -------------分割线
+    上面讲的是相对parent的情况，也可以用相对某个View的情况
+    比如下面
 
+    <TextView
+        android:id="@+id/button6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+
+
+        android:text="居中布局 正下方偏移20dp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintEnd_toEndOf="@id/textView"
+        app:layout_constraintStart_toStartOf="@id/textView"
+        app:layout_constraintTop_toBottomOf="@id/textView"
+        />
+
+    总结：不管是相对于parent还是相对View，我们只要把握好四个方向的位置，以及偏移数据大小。就可以非常容易地写出基本的布局
 </android.support.constraint.ConstraintLayout>

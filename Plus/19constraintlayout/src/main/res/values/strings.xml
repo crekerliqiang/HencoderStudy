@@ -1,5 +1,5 @@
 <resources>
     <string name="app_name">19constraintLayout</string>
-    <string name="test1">Test1</string>
+    <string name="test1">基本方位和偏移</string>
     <string name="test2">Test2</string>
 </resources>

@@ -6,13 +6,15 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="#f8f8f8"
-    tools:context="MainActivity">
+    tools:context="MainActivity"
+    tools:ignore="ExtraText">
 
+    View Page 的上侧选中栏
     <android.support.design.widget.TabLayout
         android:id="@+id/tabLayout"
         android:layout_width="match_parent"
         android:layout_height="48dp"
-        android:background="@android:color/white"
+        android:background="@android:color/black"
         app:tabTextAppearance="@android:style/TextAppearance.Widget.TabWidget"
         app:tabMode="scrollable" />
 
