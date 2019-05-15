@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:ignore="MissingConstraints"
+    android:background="@drawable/sample5_background">
+
+    <ImageView
+        android:id="@+id/sun"
+        android:layout_width="70dp"
+        android:layout_height="83dp"
+        android:src="@drawable/sample5_sun"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+
+        />
+
+    <ImageView
+        android:id="@+id/earth"
+        android:layout_width="36dp"
+        android:layout_height="43dp"
+        android:src="@drawable/sample5_earth"
+
+        app:layout_constraintCircle="@id/sun"
+        app:layout_constraintCircleAngle="45"
+        app:layout_constraintCircleRadius="120dp"
+         />
+
+    <ImageView
+        android:layout_width="28dp"
+        android:layout_height="24dp"
+        android:src="@drawable/sample5_moon"
+
+        app:layout_constraintCircle="@id/earth"
+        app:layout_constraintCircleAngle="45"
+        app:layout_constraintCircleRadius="60dp"
+         />
+
+</android.support.constraint.ConstraintLayout>

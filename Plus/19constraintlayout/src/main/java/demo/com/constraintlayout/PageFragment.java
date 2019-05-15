@@ -10,12 +10,10 @@ import android.view.ViewGroup;
 import android.view.ViewStub;
 
 public class PageFragment extends Fragment {
-    @LayoutRes
     int sampleLayoutRes;
-    @LayoutRes
     int practiceLayoutRes;
 
-    public static PageFragment newInstance(@LayoutRes int sampleLayoutRes, @LayoutRes int practiceLayoutRes) {
+    public static PageFragment newInstance( int sampleLayoutRes,  int practiceLayoutRes) {
         PageFragment fragment = new PageFragment();
         Bundle args = new Bundle();
         args.putInt("sampleLayoutRes", sampleLayoutRes);

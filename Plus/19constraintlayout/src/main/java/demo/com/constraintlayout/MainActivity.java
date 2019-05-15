@@ -1,8 +1,6 @@
 package demo.com.constraintlayout;
 
 import android.os.Bundle;
-import android.support.annotation.LayoutRes;
-import android.support.annotation.StringRes;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentPagerAdapter;
@@ -16,20 +14,25 @@ import java.util.List;
 public class MainActivity extends AppCompatActivity {
     TabLayout tabLayout;
     ViewPager pager;
-    List<PageModel> pageModels = new ArrayList<>();
+    List<PageModel> pageModels;
 
-    {
+
+    private void init(){
+        pageModels = new ArrayList<>();
         //需要就继续添加
-        pageModels.add(new PageModel(R.layout.sample_one, R.string.test1, R.layout.practice_one));
-        pageModels.add(new PageModel(R.layout.sample_two, R.string.test2, R.layout.practice_two));
-
+        pageModels.add(new PageModel(R.layout.sample_11, R.string.base_constraint_layout, R.layout.practice));
+        pageModels.add(new PageModel(R.layout.sample_12, R.string.base_constraint_layout_2, R.layout.practice));
+        pageModels.add(new PageModel(R.layout.sample_13, R.string.base_constraint_layout_bias, R.layout.practice));
+        pageModels.add(new PageModel(R.layout.sample_14_textbaseline, R.string.text_base_line, R.layout.practice));
+        pageModels.add(new PageModel(R.layout.sample_15_circle, R.string.circle, R.layout.practice));
+        pageModels.add(new PageModel(R.layout.sample_21_constraint_width, R.string.constraint_width, R.layout.practice));
     }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
+        init();
         pager = (ViewPager) findViewById(R.id.pager);
         pager.setAdapter(new FragmentPagerAdapter(getSupportFragmentManager()) {
 
@@ -60,17 +63,15 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private class PageModel {
-        @LayoutRes
         int sampleLayoutRes;
-        @StringRes
         int titleRes;
-        @LayoutRes
         int practiceLayoutRes;
 
-        PageModel(@LayoutRes int sampleLayoutRes, @StringRes int titleRes, @LayoutRes int practiceLayoutRes) {
+        PageModel( int sampleLayoutRes,  int titleRes,  int practiceLayoutRes) {
             this.sampleLayoutRes = sampleLayoutRes;
             this.titleRes = titleRes;
             this.practiceLayoutRes = practiceLayoutRes;
         }
     }
+
 }

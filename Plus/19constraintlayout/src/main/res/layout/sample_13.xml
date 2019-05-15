@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:ignore="ExtraText">
+
+    1.充满约束  把宽度或者高度改为0dp就可以了
+    理解一下“充满约束条件”的意思 和充满父布局[match_parent]是不一样
+    0dp == match_constraint
+    <Button
+        android:id="@+id/textView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="sample_two"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        />
+    2.约束比例
+    想要两个布局实现1：1的布局，只需要两步即可
+        1.layout_width="0dp" [0dp前面已经说过，就是match_constraint的意思]
+
+        2.两个布局相互建立约束
+                首先，Button1的Top、Bottom、Start和parent的Top、Bottom、Start建立约束
+                其次，Button2的Top、Bottom、Start分别和Button1的Top、Bottom、End建立约束，Button2的End和parent的End建立约束
+                到这儿，按照上前面讲的弹簧拉拽的模型，两个Button的四个方向都达到了二力平衡，所以，宽度就是1：1了，但到这一步，
+                实际效果是这样子的
+
+                上个图
+                如图，Button2虽然充满了约束，但是Button1并没有改变宽度
+
+                所以到这里，我们需要重新理解一下“约束”的意义：“我们把约束类比为弹簧拉拽是为了入门理解，但这种约束并不满足相互作用力，
+                所以：一定要独立地去分析View的四个方向”。我们带着这种思路分析一下当前的问题，
+                对于Button2，四个方向都有了约束，width又是0dp，所以宽度充满了约束，这是没问题的；
+                对于Button1，虽然Button2的Start约束到了Button1的End，但是Button1的End是没有约束的[Button2拉Button1，但是Button1并没有拉Button2]
+                所以我们还需要给Button1的End添加一个约束--Button1的End约束到Button2的Start，这样子就可以实现1：1了
+
+    实现1：n或者n:1布局
+        在上面两步的基础上，使用 app:layout_constraintHorizontal_weight="n"
+        我们让Button1的app:layout_constraintHorizontal_weight="2"，
+        让Button2的app:layout_constraintHorizontal_weight="1"，就实现了2：1。想实现其他比例，修改一下数据就行了
+    <Button
+        android:id="@+id/button1"
+        android:layout_width="0dp"
+        app:layout_constraintHorizontal_weight="2"
+        android:layout_height="wrap_content"
+        android:text="Button1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/button2"
+        />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="0dp"
+        app:layout_constraintHorizontal_weight="1"
+        android:layout_height="wrap_content"
+        android:text="Button2"
+        app:layout_constraintBottom_toBottomOf="@+id/button1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/button1"
+        app:layout_constraintTop_toTopOf="@+id/button1" />
+
+
+        bias 约束比例
+
+
+
+</android.support.constraint.ConstraintLayout>

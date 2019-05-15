@@ -7,6 +7,9 @@
     android:orientation="vertical"
     tools:ignore="ExtraText">
 
+    sample1-5 都是基本的位置放置
+
+
     基本的上下左右放置
 
 
@@ -87,7 +90,7 @@
 
 
 
-    如何理解约束？链子 画一个图，包含一个矩形（View的形状）的Start、End、Top、Bottom，理解，约束就是绑定的意思
+    如何理解约束？链子 画一个图，包含一个矩形（View的形状）的Start、End、Top、Bottom，理解，约束就是绑定的意思，弹簧几个方向拉
 
 
     -------------分割线
@@ -100,13 +103,19 @@
         android:layout_height="wrap_content"
         android:background="@color/colorPrimary"
 
-
         android:text="居中布局 正下方偏移20dp"
         android:layout_marginTop="20dp"
         app:layout_constraintEnd_toEndOf="@id/textView"
         app:layout_constraintStart_toStartOf="@id/textView"
         app:layout_constraintTop_toBottomOf="@id/textView"
         />
-
     总结：不管是相对于parent还是相对View，我们只要把握好四个方向的位置，以及偏移数据大小。就可以非常容易地写出基本的布局
+
+
+
+
+    其他
+
 </android.support.constraint.ConstraintLayout>
+
+
