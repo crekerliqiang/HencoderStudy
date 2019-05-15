@@ -1,9 +1,15 @@
 <resources>
     <string name="app_name">19constraintLayout</string>
-    <string name="base_constraint_layout">基本方位和偏移</string>
+    <string name="base_constraint_layout">base_layout</string>
     <string name="base_constraint_layout_2">整体约束布局</string>
     <string name="base_constraint_layout_bias">约束比例</string>
-    <string name="text_base_line">文字对齐</string>
-    <string name="circle">圆形定位布局</string>
+    <string name="text_base_line">textBaseLine</string>
+    <string name="circle">Circle</string>
     <string name="constraint_width">constraintWidth</string>
+    <string name="constraint_bias">constraint_bias</string>
+    <string name="constraint_chain_style">ChainStyle</string>
+    <string name="constraint_width_height_ratio">WH_Ratio</string>
+    <string name="constraint_percent">percent</string>
+    <string name="constraint_guide_line">guideLine</string>
+    <string name="constraint_guide">guide</string>
 </resources>

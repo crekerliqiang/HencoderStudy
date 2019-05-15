@@ -22,10 +22,17 @@ public class MainActivity extends AppCompatActivity {
         //需要就继续添加
         pageModels.add(new PageModel(R.layout.sample_11, R.string.base_constraint_layout, R.layout.practice));
         pageModels.add(new PageModel(R.layout.sample_12, R.string.base_constraint_layout_2, R.layout.practice));
-        pageModels.add(new PageModel(R.layout.sample_13, R.string.base_constraint_layout_bias, R.layout.practice));
+        pageModels.add(new PageModel(R.layout.sample_13_horizontal_weight, R.string.base_constraint_layout_bias, R.layout.practice));
         pageModels.add(new PageModel(R.layout.sample_14_textbaseline, R.string.text_base_line, R.layout.practice));
         pageModels.add(new PageModel(R.layout.sample_15_circle, R.string.circle, R.layout.practice));
         pageModels.add(new PageModel(R.layout.sample_21_constraint_width, R.string.constraint_width, R.layout.practice));
+        pageModels.add(new PageModel(R.layout.sample_22_bias, R.string.constraint_bias, R.layout.practice));
+        pageModels.add(new PageModel(R.layout.sample_23_chain_style, R.string.constraint_chain_style, R.layout.practice));
+        pageModels.add(new PageModel(R.layout.sample_24_width_height_ratio, R.string.constraint_width_height_ratio, R.layout.practice));
+        pageModels.add(new PageModel(R.layout.sample_25_percent, R.string.constraint_percent, R.layout.practice));
+        pageModels.add(new PageModel(R.layout.sample_26_guide_line, R.string.constraint_guide_line, R.layout.practice));
+        pageModels.add(new PageModel(R.layout.sample_31_group, R.string.constraint_guide, R.layout.practice));
+
     }
 
     @Override
@@ -39,7 +46,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public Fragment getItem(int position) {
                 PageModel pageModel = pageModels.get(position);
-                return PageFragment.newInstance(pageModel.sampleLayoutRes, pageModel.practiceLayoutRes);
+                return PageFragment.newInstance(pageModel.sampleLayoutRes, pageModel.practiceLayoutRes,MainActivity.this);
             }
 
             @Override
@@ -55,6 +62,11 @@ public class MainActivity extends AppCompatActivity {
 
         tabLayout = (TabLayout) findViewById(R.id.tabLayout);
         tabLayout.setupWithViewPager(pager);
+
+
+
+
+
     }
 
     @Override
