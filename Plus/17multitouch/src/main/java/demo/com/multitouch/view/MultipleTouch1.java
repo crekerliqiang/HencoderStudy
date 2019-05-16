@@ -4,6 +4,7 @@ import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Paint;
+import android.graphics.Path;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.View;
@@ -24,6 +25,8 @@ public class MultipleTouch1 extends View {
      * 追踪手指的id
      * id在滑动过程中是不变的[这里的不变是指：AB手指在交替按下时，原放在屏幕上的手指的index会在新的手指按下时候被改变，但是id不会变]
      * 核心在于每次手指放下或者抬起时，将 id 赋值给 trackingPointerId ，然后在MOVE时，使用 trackingPointerId 去获取index，从而获取坐标
+     *
+     * !!这个做重要，理解了这样情况，其他的就很好理解了
      */
     private int trackingPointerId = 0;
     public MultipleTouch1(Context context, AttributeSet attrs) {
@@ -100,5 +103,11 @@ public class MultipleTouch1 extends View {
 
         offsetX = offsetX < 0 ? 0 : offsetX;
         offsetY = offsetY < 0 ? 0 : offsetY;
+    }
+
+    private void t(){
+        Path path = new Path();
+        path.rLineTo(1, 1);
+        path.lineTo(1, 1);
     }
 }

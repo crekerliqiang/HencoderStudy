@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="MyTextView">
+        <attr name="my_view_color" format="integer"/>
+    </declare-styleable>
+
+    <declare-styleable name="SlideView">
+
+
+    </declare-styleable>
+
+
+
+</resources>
