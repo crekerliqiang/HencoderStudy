@@ -1,8 +1,6 @@
-package demo.com.hencoderplus;
+package demo.com.constraintlayout;
 
 import android.os.Bundle;
-import android.support.annotation.LayoutRes;
-import android.support.annotation.StringRes;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentPagerAdapter;
@@ -14,30 +12,30 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
-    //    implementation 'com.android.support:design:28.0.0'
     TabLayout tabLayout;
     ViewPager pager;
-    List<PageModel> pageModels = new ArrayList<>();
+    List<PageModel> pageModels;
 
-    {
+
+    private void init(){
+        pageModels = new ArrayList<>();
         //需要就继续添加
-        pageModels.add(new PageModel(R.layout.sample_one, R.string.test1, R.layout.practice_one));
-        pageModels.add(new PageModel(R.layout.sample_two, R.string.test2, R.layout.practice_two));
-
+        pageModels.add(new PageModel(R.layout.sample, R.string.test1, R.layout.practice));
+        pageModels.add(new PageModel(R.layout.sample, R.string.test2, R.layout.practice));
     }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
+        init();
         pager = (ViewPager) findViewById(R.id.pager);
         pager.setAdapter(new FragmentPagerAdapter(getSupportFragmentManager()) {
 
             @Override
             public Fragment getItem(int position) {
                 PageModel pageModel = pageModels.get(position);
-                return PageFragment.newInstance(pageModel.sampleLayoutRes, pageModel.practiceLayoutRes);
+                return PageFragment.newInstance(pageModel.topLayoutRes, pageModel.bottomLayoutRes,pageModel.titleRes);
             }
 
             @Override
@@ -53,6 +51,11 @@ public class MainActivity extends AppCompatActivity {
 
         tabLayout = (TabLayout) findViewById(R.id.tabLayout);
         tabLayout.setupWithViewPager(pager);
+
+
+
+
+
     }
 
     @Override
@@ -61,17 +64,15 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private class PageModel {
-        @LayoutRes
-        int sampleLayoutRes;
-        @StringRes
+        int topLayoutRes;
         int titleRes;
-        @LayoutRes
-        int practiceLayoutRes;
+        int bottomLayoutRes;
 
-        PageModel(@LayoutRes int sampleLayoutRes, @StringRes int titleRes, @LayoutRes int practiceLayoutRes) {
-            this.sampleLayoutRes = sampleLayoutRes;
+        PageModel( int topLayoutRes,  int titleRes,  int bottomLayoutRes) {
+            this.topLayoutRes = topLayoutRes;
             this.titleRes = titleRes;
-            this.practiceLayoutRes = practiceLayoutRes;
+            this.bottomLayoutRes = bottomLayoutRes;
         }
     }
+
 }

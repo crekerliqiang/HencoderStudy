@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">AppName</string>
+    <string name="app_name">motionLayout</string>
     <string name="test1">test1</string>
     <string name="test2">test2</string>
 </resources>
