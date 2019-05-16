@@ -1,4 +1,0 @@
-#Tue May 14 21:47:32 CST 2019
-base.0=/Users/liqiang/doc/9.android/HencoderStudy/PracticeDraw1/app/build/intermediates/transforms/dexMerger/debug/0
-path.0=classes.dex
-renamed.0=classes.dex
