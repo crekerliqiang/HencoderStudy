@@ -8,6 +8,19 @@
         </compositeConfiguration>
         <option name="distributionType" value="DEFAULT_WRAPPED" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/16scalable" />
+            <option value="$PROJECT_DIR$/17multitouch" />
+            <option value="$PROJECT_DIR$/18recyclerview" />
+            <option value="$PROJECT_DIR$/19constraintlayout" />
+            <option value="$PROJECT_DIR$/app" />
+            <option value="$PROJECT_DIR$/library" />
+            <option value="$PROJECT_DIR$/taglayout" />
+            <option value="$PROJECT_DIR$/touch15" />
+          </set>
+        </option>
         <option name="resolveModulePerSourceSet" value="false" />
       </GradleProjectSettings>
     </option>

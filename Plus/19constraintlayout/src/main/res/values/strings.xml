@@ -12,4 +12,5 @@
     <string name="constraint_percent">percent</string>
     <string name="constraint_guide_line">guideLine</string>
     <string name="constraint_guide">guide</string>
+    <string name="constraint_layer">layer</string>
 </resources>

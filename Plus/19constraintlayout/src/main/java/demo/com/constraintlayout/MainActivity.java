@@ -32,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
         pageModels.add(new PageModel(R.layout.sample_25_percent, R.string.constraint_percent, R.layout.practice));
         pageModels.add(new PageModel(R.layout.sample_26_guide_line, R.string.constraint_guide_line, R.layout.practice));
         pageModels.add(new PageModel(R.layout.sample_31_group, R.string.constraint_guide, R.layout.practice));
-
+        pageModels.add(new PageModel(R.layout.sample_32_layer, R.string.constraint_layer, R.layout.practice));
     }
 
     @Override
@@ -46,7 +46,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public Fragment getItem(int position) {
                 PageModel pageModel = pageModels.get(position);
-                return PageFragment.newInstance(pageModel.sampleLayoutRes, pageModel.practiceLayoutRes,MainActivity.this);
+                return PageFragment.newInstance(pageModel.topLayoutRes, pageModel.bottomLayoutRes,pageModel.titleRes);
             }
 
             @Override
@@ -75,14 +75,14 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private class PageModel {
-        int sampleLayoutRes;
+        int topLayoutRes;
         int titleRes;
-        int practiceLayoutRes;
+        int bottomLayoutRes;
 
-        PageModel( int sampleLayoutRes,  int titleRes,  int practiceLayoutRes) {
-            this.sampleLayoutRes = sampleLayoutRes;
+        PageModel( int topLayoutRes,  int titleRes,  int bottomLayoutRes) {
+            this.topLayoutRes = topLayoutRes;
             this.titleRes = titleRes;
-            this.practiceLayoutRes = practiceLayoutRes;
+            this.bottomLayoutRes = bottomLayoutRes;
         }
     }
 

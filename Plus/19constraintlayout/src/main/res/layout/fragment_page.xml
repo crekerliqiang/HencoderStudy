@@ -10,7 +10,7 @@
         android:layout_weight="1">
 
         <ViewStub
-            android:id="@+id/sampleStub"
+            android:id="@+id/topStub"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:inflatedId="@+id/model" />
@@ -28,7 +28,7 @@
         android:layout_weight="1">
 
         <ViewStub
-            android:id="@+id/practiceStub"
+            android:id="@+id/bottomStub"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:inflatedId="@+id/model" />
