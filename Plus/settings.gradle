@@ -1,2 +1,2 @@
-include ':app', ':taglayout', ':library', ':touch15', ':16scalable', ':17multitouch', ':18recyclerview', ':20motionlayout',
+include ':app', ':taglayout', ':library', ':touch15', ':16scalable', ':17multitouch', ':18recyclerview', ':20motionlayout', ':24threadsynchroized', ':10xfermode',
         ':19constraintlayout', ':test'
